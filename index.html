@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breno | Currículo & Portfólio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f3f8f6;
+            color: #162624;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(16, 42, 39, 0.96);
+            backdrop-filter: blur(8px);
+            color: #f3f8f6;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(110, 207, 184, 0.22);
+        }
+
+        header h1 {
+            color: #7ee0c8;
+            font-size: 22px;
+            letter-spacing: 0.5px;
+        }
+
+        nav a {
+            color: #e6f4f0;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+
+        nav a:hover {
+            color: #7ee0c8;
+        }
+
+        .inicio {
+            padding: 105px 8% 90px;
+            background: radial-gradient(circle at top right, #1f7a6d 0%, #134741 50%, #0d2422 100%);
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(126, 224, 200, 0.45);
+            color: #c8f5ea;
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .inicio h2 {
+            font-size: 44px;
+            margin-bottom: 16px;
+            line-height: 1.15;
+        }
+
+        .inicio p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto 28px;
+            color: #e9f7f4;
+        }
+
+        .destaque {
+            color: #7ee0c8;
+        }
+
+        .acoes-hero {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 22px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .btn-primario {
+            background-color: #7ee0c8;
+            color: #0e2624;
+        }
+
+        .btn-secundario {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+        }
+
+        section {
+            padding: 64px 8%;
+        }
+
+        section h2 {
+            color: #134e47;
+            font-size: 28px;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .subtitulo-secao {
+            text-align: center;
+            color: #4a635f;
+            max-width: 620px;
+            margin: 0 auto 32px;
+            font-size: 15px;
+        }
+
+        .sobre {
+            max-width: 820px;
+            margin: auto;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 18px;
+            box-shadow: 0 8px 24px rgba(16, 42, 39, 0.06);
+            font-size: 17px;
+        }
+
+        .sobre p {
+            margin-bottom: 16px;
+        }
+
+        .sobre p:last-child {
+            margin-bottom: 0;
+        }
+
+        .destaques-rapidos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            max-width: 820px;
+            margin: 24px auto 0;
+        }
+
+        .mini-stat {
+            background-color: #ffffff;
+            border-radius: 14px;
+            padding: 18px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(16, 42, 39, 0.05);
+            border-bottom: 3px solid #1f7a6d;
+        }
+
+        .mini-stat strong {
+            display: block;
+            font-size: 20px;
+            color: #134e47;
+            margin-bottom: 4px;
+        }
+
+        .mini-stat span {
+            font-size: 13px;
+            color: #4a635f;
+        }
+
+        .cartoes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 22px;
+            margin-top: 20px;
+        }
+
+        .cartao {
+            background-color: #ffffff;
+            padding: 26px;
+            border-radius: 16px;
+            box-shadow: 0 6px 20px rgba(16, 42, 39, 0.07);
+            border-top: 4px solid #1f7a6d;
+            transition: transform 0.25s, box-shadow 0.25s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .cartao:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 26px rgba(19, 78, 71, 0.14);
+        }
+
+        .tag-cartao {
+            display: inline-block;
+            font-size: 12px;
+            font-weight: bold;
+            color: #134e47;
+            background-color: #dcf3ec;
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .cartao h3 {
+            color: #103b36;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .cartao p {
+            font-size: 15px;
+            color: #2d423f;
+        }
+
+        details {
+            margin-top: 14px;
+            background-color: #eef7f4;
+            border-radius: 10px;
+            padding: 10px 12px;
+            font-size: 14px;
+            color: #223835;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #134e47;
+            list-style: none;
+        }
+
+        summary::before {
+            content: "+ ";
+            color: #c97a16;
+        }
+
+        details[open] summary::before {
+            content: "- ";
+            color: #c97a16;
+        }
+
+        details p {
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .habilidades {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .habilidades span {
+            background-color: #ffffff;
+            color: #134e47;
+            border: 1px solid #b9e2d6;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        .habilidades span:hover {
+            background-color: #155950;
+            border-color: #155950;
+            color: #ffffff;
+        }
+
+        .objetivo {
+            background-color: #e1f1ec;
+            text-align: center;
+        }
+
+        .objetivo p {
+            max-width: 760px;
+            margin: 0 auto 24px;
+            font-size: 17px;
+        }
+
+        .botoes-contato {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+            max-width: 680px;
+            margin: auto;
+        }
+
+        .btn-gmail {
+            background-color: #134e47;
+            color: #ffffff;
+            padding: 13px 22px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(19, 78, 71, 0.16);
+        }
+
+        .btn-gmail:hover {
+            background-color: #1b6b61;
+        }
+
+        .btn-gmail.copiado {
+            background-color: #b86c11;
+        }
+
+        .btn-whatsapp {
+            background-color: #d48822;
+            color: #ffffff;
+            padding: 13px 22px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: bold;
+            box-shadow: 0 6px 16px rgba(212, 136, 34, 0.24);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #bd7617;
+        }
+
+        .status-copia {
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: #134e47;
+            font-weight: 600;
+            min-height: 20px;
+            margin-top: 4px;
+        }
+
+        footer {
+            background-color: #102a27;
+            color: #d2e7e2;
+            text-align: center;
+            padding: 26px 8%;
+            font-size: 14px;
+        }
+
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 4px 8px;
+            }
+
+            .inicio {
+                padding: 72px 6%;
+            }
+
+            .inicio h2 {
+                font-size: 32px;
+            }
+
+            .sobre {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Breno | Currículo & Portfólio</h1>
+
+        <nav>
+            <a href="#sobre">Sobre</a>
+            <a href="#trajetoria">Trajetória</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#projetos">Projetos & Áreas</a>
+            <a href="#objetivo">Contato</a>
+        </nav>
+    </header>
+
+    <section class="inicio">
+        <span class="status-badge">18 anos • Tecnologia, Dados & Criação Visual</span>
+        <h2>
+            Olá, eu sou o
+            <span class="destaque">Breno</span>
+        </h2>
+        <p>
+            Formação técnica, experiência em estágio na prefeitura e foco
+            prático para resolver problemas — unindo dados, lógica,
+            identidade visual e montagem/otimização de computadores.
+        </p>
+        <div class="acoes-hero">
+            <a href="#projetos" class="btn btn-primario">Ver o que eu faço</a>
+            <a href="#objetivo" class="btn btn-secundario">Entrar em contato</a>
+        </div>
+    </section>
+
+    <section id="sobre">
+        <h2>Sobre mim</h2>
+        <p class="subtitulo-secao">
+            Perfil prático, direto e movido a aprender fazendo.
+        </p>
+
+        <div class="sobre">
+            <p>
+                Tenho 18 anos e construí minha base combinando estudo técnico,
+                vivência na prefeitura e projetos próprios fora da sala de aula.
+                Gosto de olhar para um problema, entender como ele funciona por
+                baixo do pano e resolver de forma objetiva.
+            </p>
+            <p>
+                Além da parte técnica e analítica, tenho facilidade com criação
+                visual, edição de imagens, desenho e diagnóstico/montagem de
+                hardware para PC. Costumo unir criatividade com organização
+                para entregar coisas bem feitas sem enrolação.
+            </p>
+        </div>
+
+        <div class="destaques-rapidos">
+            <div class="mini-stat">
+                <strong>18 anos</strong>
+                <span>Pronto para novos desafios</span>
+            </div>
+            <div class="mini-stat">
+                <strong>6 meses</strong>
+                <span>Estágio na Prefeitura (CIEE)</span>
+            </div>
+            <div class="mini-stat">
+                <strong>Dados & Tech</strong>
+                <span>MySQL, Python e lógica</span>
+            </div>
+            <div class="mini-stat">
+                <strong>Visual & PC</strong>
+                <span>Design, edição e hardware</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="trajetoria">
+        <h2>Experiência e Formação</h2>
+        <p class="subtitulo-secao">
+            Clique em "Ver mais detalhes" nos cards para expandir as informações.
+        </p>
+
+        <div class="cartoes">
+            <div class="cartao">
+                <div>
+                    <span class="tag-cartao">Experiência Profissional</span>
+                    <h3>Estágio na Prefeitura Municipal</h3>
+                    <p>
+                        Atuação por 6 meses via CIEE na área técnica,
+                        desenvolvendo responsabilidade, organização de rotina
+                        e postura profissional em ambiente institucional.
+                    </p>
+                </div>
+                <details>
+                    <summary>Ver mais detalhes</summary>
+                    <p>
+                        Vivência real de atendimento a demandas, cumprimento de
+                        prazos e adaptação a processos estruturados.
+                    </p>
+                </details>
+            </div>
+
+            <div class="cartao">
+                <div>
+                    <span class="tag-cartao">Formação</span>
+                    <h3>Ensino Médio & Curso Técnico</h3>
+                    <p>
+                        Base sólida em lógica de programação, estruturação de
+                        fluxogramas, banco de dados e análise exploratória.
+                    </p>
+                </div>
+                <details>
+                    <summary>Ver mais detalhes</summary>
+                    <p>
+                        Prática com MySQL e Python (pandas, numpy, matplotlib,
+                        seaborn e scikit-learn) para organizar e interpretar dados.
+                    </p>
+                </details>
+            </div>
+
+            <div class="cartao">
+                <div>
+                    <span class="tag-cartao">Prática Contínua</span>
+                    <h3>Criação Visual & Hardware</h3>
+                    <p>
+                        Desenvolvimento contínuo de artes, identidades visuais,
+                        edição de imagens, desenho à mão e montagem/upgrade de PC.
+                    </p>
+                </div>
+                <details>
+                    <summary>Ver mais detalhes</summary>
+                    <p>
+                        Experiência prática em escolher peças com bom custo-benefício,
+                        testar componentes e resolver falhas de sistema e drivers.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <p class="subtitulo-secao">
+            Competências técnicas e comportamentais que aplico no dia a dia.
+        </p>
+
+        <div class="habilidades">
+            <span>Python</span>
+            <span>MySQL</span>
+            <span>Análise de Dados</span>
+            <span>Fluxogramas & Lógica</span>
+            <span>Design Gráfico</span>
+            <span>Edição de Imagem</span>
+            <span>Desenho</span>
+            <span>Hardware & Montagem de PC</span>
+            <span>Troubleshooting (Windows)</span>
+            <span>Resolução de Problemas</span>
+            <span>Organização</span>
+            <span>Disciplina</span>
+        </div>
+    </section>
+
+    <section id="projetos">
+        <h2>Projetos e Frentes de Atuação</h2>
+        <p class="subtitulo-secao">
+            Exemplos do que sei construir, analisar e entregar.
+        </p>
+
+        <div class="cartoes">
+            <div class="cartao">
+                <div>
+                    <span class="tag-cartao">Dados</span>
+                    <h3>Análise e Estruturação de Dados</h3>
+                    <p>
+                        Modelagem de tabelas em MySQL e tratamento/visualização
+                        de dados em Python para transformar números brutos em
+                        informação clara.
+                    </p>
+                </div>
+                <details>
+                    <summary>Ver mais detalhes</summary>
+                    <p>
+                        Uso de padronização, redução de dimensionalidade e gráficos
+                        para facilitar a leitura de padrões.
+                    </p>
+                </details>
+            </div>
+
+            <div class="cartao">
+                <div>
+                    <span class="tag-cartao">Design</span>
+                    <h3>Identidade Visual & Edição</h3>
+                    <p>
+                        Criação de logos, capas, banners, artes para redes sociais
+                        e composições estilizadas com foco em impacto visual.
+                    </p>
+                </div>
+                <details>
+                    <summary>Ver mais detalhes</summary>
+                    <p>
+                        Adaptação de estilo para cada projeto — do visual limpo e
+                        profissional a estéticas mais marcantes e criativas.
+                    </p>
+                </details>
+            </div>
+
+            <div class="cartao">
+                <div>
+                    <span class="tag-cartao">Setup & Sistemas</span>
+                    <h3>Montagem, Upgrade e Diagnóstico</h3>
+                    <p>
+                        Planejamento de upgrades de PC, reaproveitamento inteligente
+                        de peças, testes de estabilidade e correção de falhas.
+                    </p>
+                </div>
+                <details>
+                    <summary>Ver mais detalhes</summary>
+                    <p>
+                        Abordagem sistemática para identificar gargalos, ajustar
+                        configurações e manter o sistema redondo.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="objetivo" class="objetivo">
+        <h2>Meu Objetivo</h2>
+        <p>
+            Busco uma oportunidade onde eu possa aplicar minha base técnica,
+            minha experiência profissional na prefeitura e minha facilidade
+            para resolver problemas na prática — crescendo junto com a equipe
+            e entregando resultado consistente.
+        </p>
+
+        <div class="botoes-contato">
+            <button type="button" id="btnCopiarGmail" class="btn btn-gmail" onclick="copiarGmail()">
+                Copiar Gmail: brenobarrooss@gmail.com
+            </button>
+
+            <a
+                href="https://wa.me/5511933578717?text=Ol%C3%A1%20Breno%2C%20vi%20seu%20curr%C3%ADculo%20e%20portf%C3%B3lio!"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-whatsapp"
+            >
+                WhatsApp: (11) 93357-8717
+            </a>
+
+            <div id="statusCopia" class="status-copia" aria-live="polite"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Breno — Currículo & Portfólio Pessoal</p>
+        <p>Feito com HTML5 e CSS3</p>
+    </footer>
+
+    <script>
+        function copiarGmail() {
+            const email = "brenobarrooss@gmail.com";
+            const botao = document.getElementById("btnCopiarGmail");
+            const status = document.getElementById("statusCopia");
+
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(email).then(() => {
+                    mostrarSucesso(botao, status);
+                }).catch(() => {
+                    copiaFallback(email, botao, status);
+                });
+            } else {
+                copiaFallback(email, botao, status);
+            }
+        }
+
+        function copiaFallback(texto, botao, status) {
+            const inputTemp = document.createElement("input");
+            inputTemp.value = texto;
+            document.body.appendChild(inputTemp);
+            inputTemp.select();
+            document.execCommand("copy");
+            document.body.removeChild(inputTemp);
+            mostrarSucesso(botao, status);
+        }
+
+        function mostrarSucesso(botao, status) {
+            const textoOriginal = botao.textContent;
+            botao.textContent = "Gmail copiado!";
+            botao.classList.add("copiado");
+            status.textContent = "brenobarrooss@gmail.com copiado para a área de transferência.";
+
+            setTimeout(() => {
+                botao.textContent = textoOriginal;
+                botao.classList.remove("copiado");
+                status.textContent = "";
+            }, 2500);
+        }
+    </script>
+
+</body>
+</html>
